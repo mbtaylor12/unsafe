@@ -1,3 +1,18 @@
+<!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="UTF-8">
+		<script>
+			function pageLoad(){
+				var name = new URL(window.location).searchParams.get("name");
 
+				document.getElementById("welcome").innerHTML = name;
+			}
+		</script>
+	</head>
+	<body onload="pageLoad()">
+		<h1>Unsafe Page! Vulnerable to DOM-Based XSS</h1>
+
+		Welcome: <label ID="welcome"></label>
+	</body>
 </html>
